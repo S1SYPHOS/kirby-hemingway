@@ -1,0 +1,22 @@
+title: Post (Quote)
+
+pages: false
+
+fields:
+  title: title
+  date: date
+  category: category
+  sticky: sticky
+  author: author
+
+  text:
+    label: Quote
+    type:  textarea
+
+  source:
+    label: Author / Source
+    type: text
+
+  tags:
+    label: Tags
+    type: tags

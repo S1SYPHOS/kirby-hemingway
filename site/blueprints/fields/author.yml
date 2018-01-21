@@ -1,0 +1,4 @@
+label: Author
+type: user
+width: 1/2
+readonly: true

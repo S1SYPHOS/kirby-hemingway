@@ -1,0 +1,17 @@
+title: Page (Full Width)
+
+pages:
+  template:
+    - default
+    - archive
+    - full-width
+    - no-sidebar
+
+fields:
+  title:
+    label: Title
+    type:  text
+
+  text:
+    label: Text
+    type:  textarea

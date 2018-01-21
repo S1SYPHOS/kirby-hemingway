@@ -1,0 +1,37 @@
+Title: Hemingway
+
+----
+
+Tagline: Just another Kirby theme
+
+----
+
+Description: Hemingway is a clean and beautiful theme that puts your content front and center, originally developed by (link: http://www.andersnoren.se/ text: Anders Norén popup: yes).
+
+----
+
+Footer: Theme by (link: http://www.andersnoren.se/ text: Anders Norén popup: yes)
+
+----
+
+Categories: Design,Entertainment,Games,Lifestyle,Personal,Productivity,Tech,Apple,Work
+
+----
+
+Logo: 
+
+----
+
+Error: No results. Try again, would you kindly?
+
+----
+
+Color: #1abc9c
+
+----
+
+No-posts: This blog does not contain any articles yet.
+
+----
+
+Banner: 

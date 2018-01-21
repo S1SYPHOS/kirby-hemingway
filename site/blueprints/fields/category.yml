@@ -1,0 +1,7 @@
+label: Categories
+type: multiselect
+options: field
+field:
+  page: /
+  name: categories
+width: 1/2
