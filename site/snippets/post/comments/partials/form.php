@@ -10,7 +10,7 @@
   <h3 id="reply-title" class="comment-reply-title">Leave a Reply</h3>
   <?php e($status->isUserError(), '<p id="comment-' . $comments->nextCommentId() . '" class="error">' . $status->getMessage() . '</p>') ?>
 
-  <?php e(!c::get('lingonberry.comments.nested'), '<form id="commentform" class="comment-form" action="#comment-' . $comments->nextCommentId() . '" method="post" accept-charset="utf-8" role="form" aria-labelledby="comments-form-headline">') ?>
+  <?php e(!c::get('hemingway.comments.nested'), '<form id="commentform" class="comment-form" action="#comment-' . $comments->nextCommentId() . '" method="post" accept-charset="utf-8" role="form" aria-labelledby="comments-form-headline">') ?>
   <p class="comment-notes">Your email address will not be published.</p>
 
   <p class="comment-form-comment"><textarea id="comment" name="<?= $comments->messageName() ?>" maxlength="<?= $comments->messageMaxLength() ?>" cols="45" rows="6" required><?= $comments->messageValue() ?></textarea></p>
@@ -34,13 +34,13 @@
 
   <input type="hidden" name="<?= $comments->sessionIdName() ?>" value="<?= $comments->sessionId() ?>">
 
-  <?php if (c::get('lingonberry.comments.preview')) {
+  <?php if (c::get('hemingway.comments.preview')) {
     echo '<input type="submit" name="' . $comments->previewName() . '" value="Preview Comment">';
     e($comments->isValidPreview(), '<input id="comments-submit" type="submit" name="' . $comments->submitName() . '" value="Post Comment">');
   } else {
     echo '<input id="comments-submit" type="submit" name="' . $comments->submitName() . '" value="Post Comment">';
   } ?>
 
-  <?php e(!c::get('lingonberry.comments.nested'), '</form>') ?>
+  <?php e(!c::get('hemingway.comments.nested'), '</form>') ?>
   <?php endif ?>
 </div>

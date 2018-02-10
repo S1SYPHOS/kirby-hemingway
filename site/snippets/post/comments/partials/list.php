@@ -2,11 +2,11 @@
 
 function renderComment($comment, $nesting_level) {
 
-  $aristotle = new Asset(c::get('lingonberry.comments.fallback-avatar', 'assets/images/aristotle.jpg'));
+  $aristotle = new Asset(c::get('hemingway.comments.fallback-avatar', 'assets/images/aristotle.jpg'));
   $fallback = $aristotle->crop(120)->url();
-  $picture = c::get('lingonberry.comments.enable-gravatar') ? gravatar($comment->email(), 120) : $fallback;
+  $picture = c::get('hemingway.comments.enable-gravatar') ? gravatar($comment->email(), 120) : $fallback;
 
-  echo '<li id="comment-' . $comment->id() . '" class="comment' . e($comment->isPreview() && !c::get('lingonberry.comments.nested'), ' preview') . '">';
+  echo '<li id="comment-' . $comment->id() . '" class="comment' . e($comment->isPreview() && !c::get('hemingway.comments.nested'), ' preview') . '">';
     echo '<div id="comment-' . $comment->id() . '" class="comment">';
       echo '<div class="comment-meta comment-author vcard">';
         echo '<img class="avatar avatar-120 photo" src="' . $picture . '" width="120" height="120">';
@@ -26,7 +26,7 @@ function renderComment($comment, $nesting_level) {
     echo '</div><!-- .comment-meta -->';
     echo '<div class="comment-content post-content">';
       echo $comment->message();
-      if (c::get('lingonberry.comments.nested')) {
+      if (c::get('hemingway.comments.nested')) {
         if (!$comment->isPreview()) {
           // Radio-button for setting the reply-to field
           $radio_id = 'reply-to-' . $comment->id();
@@ -43,7 +43,7 @@ function renderComment($comment, $nesting_level) {
     echo '</div><!-- .comment-## -->';
 
     // Rendering all child comments in nested view
-    if (c::get('lingonberry.comments.nested') && $comment->hasChildren()) {
+    if (c::get('hemingway.comments.nested') && $comment->hasChildren()) {
     echo '<ul class="children">';
     foreach ($comment->children() as $child) {
       renderComment($child, $nesting_level + 1);
@@ -64,7 +64,7 @@ function renderComment($comment, $nesting_level) {
   <h2 class="comments-title"><?= $comments->count() ?><?php e($comments->count() > 1, ' Comments', ' Comment') ?></h2>
     <ol class="commentlist">
       <?php
-        if (c::get('lingonberry.comments.nested')) { $comments = $comments->nestByField('reply-to'); }
+        if (c::get('hemingway.comments.nested')) { $comments = $comments->nestByField('reply-to'); }
         foreach ($comments as $comment) { renderComment($comment, 1); }
       ?>
   </ol>
