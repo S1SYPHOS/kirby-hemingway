@@ -15,6 +15,8 @@ c::set('markdown.extra', true);
 c::set('hemingway.comments', false);
 c::set('hemingway.comments.nested', false);
 c::set('hemingway.comments.preview', false);
+c::set('hemingway.comments.enable-gravatar', false);
+c::set('hemingway.comments.fallback-avatar', null);
 c::set('hemingway.upload-quality', 85);
 
 // Plugin-specific

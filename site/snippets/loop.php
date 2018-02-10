@@ -36,15 +36,9 @@ it quite easy to customise available post types.
     <?php snippet('post/formats/' .  $format, $item) ?>
     <div class="clear"></div>
     <?php snippet('post/tags', $item) ?>
-    <?php
-      if($page->isChildOf('home') && c::get('hemingway.comments')) {
-        if(c::get('hemingway.comments.nested')) {
-          snippet('post/comments/nested');
-        } else {
-          snippet('post/comments/normal');
-        }
-      }
-    ?>
+    <?php if($page->isChildOf('home') && c::get('hemingway.comments')) {
+      snippet('post/comments/comments');
+    } ?>
   </div><!-- /post -->
   <?php endif ?>
   <?php endforeach ?>
